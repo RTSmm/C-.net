@@ -1,0 +1,31 @@
+Using System.Data;
+Using System.Data.OracleClient;
+
+public void test()
+{
+	String strConnString = "Provider=ORAOLEDB.ORACLE;Password='';Persist Security Info=True;User ID='';Data Source=''";
+        OracleConnection conn = new OracleConnection(strConnString);
+	OracleCommand objCmd = new OracleCommand();
+	OracleDataReader dtReader;
+	
+try {
+	conn.Open();
+	
+	String strSQL = "SELECT * name_table WHERE column='?'";
+	OracleDataReader dtReader;
+	cmd = new OracleCommand(strSQL, conn);
+	dtReader = cmd.ExecuteReader();
+
+}
+	
+catch {
+  MessageBox.Show("Error INSERT operation.");
+}
+finally {
+	dtReader.Close();
+	dtReader = null;
+	conn.close();
+
+}
+
+}

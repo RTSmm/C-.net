@@ -1,0 +1,24 @@
+Using System.Data;
+Using System.Data.OracleClient;
+
+public void test()
+{
+    string oradb = "Provider=ORAOLEDB.ORACLE;Password='';Persist Security Info=True;User ID='';Data Source=''"";
+          OracleConnection conn = new OracleConnection(oradb);
+Try{
+
+            conn.Open();
+            DataTable tab = new DataTable();
+            OracleDataAdapter da = new OracleDataAdapter("select * from table", conn);
+            da.Fill(tab);
+            GridView1.DataSource = tab;
+            GridView1.DataBind();
+}
+catch {
+  MessageBox.Show("Error SELECT operation.");
+}
+
+finally {
+  conn.Close();
+}
+}

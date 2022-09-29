@@ -1,0 +1,22 @@
+Using System.Data;
+Using System.Data.OracleClient;
+
+public void test()
+{
+OracleConnection conn = new OracleConnection("Provider=ORAOLEDB.ORACLE;Password='';Persist Security Info=True;User ID='';Data Source=''");
+
+try {
+conn.Open();
+
+OracleCommand cmd = new OracleCommand();
+cmd.CommandText = "INSERT INTO table(column1, column2) VALUES (10,'Thank land')";
+cmd.Connection = conn;
+cmd.ExecuteNonQuery();
+ }
+catch {
+  MessageBox.Show("Error INSERT operation.");
+}
+finally {
+  conn.Close();
+}
+}

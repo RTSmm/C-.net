@@ -1,0 +1,22 @@
+Using System.Data;
+Using System.Data.OracleClient;
+
+public void test()
+{
+OracleConnection conn = new OracleConnection("Provider=ORAOLEDB.ORACLE;Password='';Persist Security Info=True;User ID='';Data Source=''");
+
+try {
+conn.Open();
+
+OracleCommand cmd = new OracleCommand();
+cmd.CommandText = "UPDATE table SET column1='10', column2='Thank land'";
+cmd.Connection = conn;
+cmd.ExecuteNonQuery();
+ }
+catch {
+  MessageBox.Show("Error UPDATE operation.");
+}
+finally {
+  conn.Close();
+}
+}
