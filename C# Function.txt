@@ -1,0 +1,28 @@
+C# Sub Function
+
+//void ไม่ต้อง return ค่าออกมา
+ public void square(int nmbr)  
+         {  
+             int sq = nmbr * nmbr;
+             Console.WriteLine("Square of the given number is  " + sq);   
+          }  
+          
+public static void Main(string[] args)  
+         {  
+            Program pr = new Program(); // Creating a class Object  
+            pr.square(2); //calling the method
+         }  
+
+
+//public int ต้อง return ค่า ออกมา
+static void Main(string[] args)
+        {
+            Program pr = new Program(); // Creating a class Object  
+            int rslt = pr.square(2);
+            MessageBox.Show("Square of the given number is  " + rslt);
+        }
+public int square(int nmbr)
+        {
+            int sq = nmbr;
+            return sq;
+        }

@@ -1,0 +1,16 @@
+Add Nuget Packages : Aspose.Pdf
+
+Code..
+OpenFileDialog dlg1 = new OpenFileDialog();
+OpenFileDialog dlg2 = new OpenFileDialog();
+
+dlg1.FileName = "address file";
+dlg2.FileName = "address file";
+
+string path1 = dlg1.FileName;
+string path2 = dlg2.FileName;
+
+PdfFileEditor pdfEditor = new PdfFileEditor();
+pdfEditor.Concatenate(path1, path2, "D:\\new.pdf");
+
+
